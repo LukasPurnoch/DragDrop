@@ -1,0 +1,16 @@
+﻿<Window x:Class="DAD.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DAD"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Canvas Name="canvas">
+            <Rectangle Name="rect" Stroke="Red" Fill="Gray" Height="100" Width="100" Canvas.Left="48" Canvas.Top="166" MouseLeftButtonDown="rect_MouseLeftButtonDown" MouseLeftButtonUp="rect_MouseLeftButtonUp" MouseMove="rect_MouseMove"/>
+            <Rectangle Name="rect1" Stroke="Red" Fill="Gray" Height="45" Width="243" Canvas.Left="48" Canvas.Top="42" MouseLeftButtonDown="rect_MouseLeftButtonDown1" MouseLeftButtonUp="rect_MouseLeftButtonUp1" MouseMove="rect_MouseMove1"/>
+            <Rectangle Name="rect2" Stroke="Red" Fill="Gray" Height="100" Width="185" Canvas.Left="271" Canvas.Top="193" MouseLeftButtonDown="rect_MouseLeftButtonDown2" MouseLeftButtonUp="rect_MouseLeftButtonUp2" MouseMove="rect_MouseMove2"/>
+        </Canvas>
+    </Grid>
+</Window>
