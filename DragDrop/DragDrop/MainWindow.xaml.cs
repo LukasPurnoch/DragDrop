@@ -21,16 +21,19 @@ namespace DragDrop
     public partial class MainWindow : Window
     {
 
-        bool drag = false;
-        Point startPoint;
+        //bool drag = false;
+        //Point startPoint;
 
         public MainWindow()
         {
             InitializeComponent();
+
+            //<Rectangle x:Name="rect" Height="35" Stroke="Black" Width="75" Fill="RoyalBlue" MouseMove="rect_MouseMove" MouseDown="rect_MouseDown" MouseUp="rect_MouseUp" Canvas.Left="20" Canvas.Top="148"/>
+            //<Rectangle x:Name="rect1" Height="35" Stroke="Black" Width="75" Fill="RoyalBlue" MouseMove="rect_MouseMove" MouseDown="rect_MouseDown" MouseUp="rect_MouseUp" Canvas.Left="20" Canvas.Top="72"/>
         }
 
         // this creates and adds rectangles dynamically
-        private void addRectangleButton_Click(object sender, RoutedEventArgs e)
+        /*private void addRectangleButton_Click(object sender, RoutedEventArgs e)
         {
             // create new Rectangle
             Rectangle rect = new Rectangle();
@@ -77,7 +80,9 @@ namespace DragDrop
         {
             // stop dragging
             drag = false;
-        }
+        }*/
+
+
 
     }
 
