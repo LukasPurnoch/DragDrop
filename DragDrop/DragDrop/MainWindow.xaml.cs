@@ -21,8 +21,8 @@ namespace DragDrop
     public partial class MainWindow : Window
     {
 
-        //bool drag = false;
-        //Point startPoint;
+        bool drag = false;
+        Point startPoint;
 
         public MainWindow()
         {
@@ -30,26 +30,6 @@ namespace DragDrop
 
             //<Rectangle x:Name="rect" Height="35" Stroke="Black" Width="75" Fill="RoyalBlue" MouseMove="rect_MouseMove" MouseDown="rect_MouseDown" MouseUp="rect_MouseUp" Canvas.Left="20" Canvas.Top="148"/>
             //<Rectangle x:Name="rect1" Height="35" Stroke="Black" Width="75" Fill="RoyalBlue" MouseMove="rect_MouseMove" MouseDown="rect_MouseDown" MouseUp="rect_MouseUp" Canvas.Left="20" Canvas.Top="72"/>
-        }
-
-        // this creates and adds rectangles dynamically
-        /*private void addRectangleButton_Click(object sender, RoutedEventArgs e)
-        {
-            // create new Rectangle
-            Rectangle rect = new Rectangle();
-            // assign properties
-            rect.Width = 100;
-            rect.Height = 50;
-            rect.Fill = new SolidColorBrush(Colors.RoyalBlue);
-            // assign handlers
-            rect.MouseDown += rect_MouseDown;
-            rect.MouseMove += rect_MouseMove;
-            rect.MouseUp += rect_MouseUp;
-            // set default position
-            Canvas.SetLeft(rect, 0);
-            Canvas.SetTop(rect, 0);
-            // add it to canvas
-            canvas.Children.Add(rect);
         }
 
         private void rect_MouseDown(object sender, MouseButtonEventArgs e)
@@ -80,7 +60,28 @@ namespace DragDrop
         {
             // stop dragging
             drag = false;
-        }*/
+
+            Rectangle draggedRectangle = sender as Rectangle;
+            Point newPoint = Mouse.GetPosition(canvas);
+            double posX = newPoint.X;
+            double posY = newPoint.Y;
+
+            double left = Canvas.GetLeft(draggedRectangle);
+            double top = Canvas.GetTop(draggedRectangle);
+
+            // -> For cyklus, který bude počítat hodnoty kolik řádků a sloupečků. Přidávání hodnot na dynamické snapování
+            // -> Vymyslet to, aby každý item měl svoje id (barva, hodnota v tabulce, neviditelná, ...)
+
+            if (posX >= 0 && posX <= 99)
+            {
+                Canvas.SetLeft(draggedRectangle, 0);
+
+                if (posY >= 0 && posY <= 99)
+                {
+                    Canvas.SetTop(draggedRectangle, 0);
+                }
+            }
+        }
 
 
 
